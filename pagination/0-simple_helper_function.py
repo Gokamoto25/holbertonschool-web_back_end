@@ -25,6 +25,9 @@ if __name__ == "__main__":
 
     Atributos: - res: Variable utilizada para almacenar el
     resultado de llamar a la función index_range.
+
+    Uso: Este bloque se usa comúnmente para probar o ejecutar
+    código específico cuando el script se ejecuta directamente.
     """
     res = index_range(1, 7)
     print(type(res))  # <class 'tuple'>
