@@ -12,6 +12,13 @@ def index_range(page: int, page_size: int) -> tuple:
 
     Return:
     tupla: una tupla que contiene los índices inicial y final.
+
+    Ejemplo:
+    >>> index_range(1, 7)
+    (0, 7)
+
+    >>> index_range(page=3, page_size=15)
+    (30, 45)
     """
     start_index = (page - 1) * page_size
     end_index = page * page_size
@@ -22,6 +29,10 @@ if __name__ == "__main__":
     """
     se ejecutará solo si el script se ejecuta como programa
     principal
+
+    Example:
+    >>> python script.py
+    El código dentro de este bloque se ejecutará.
 
     Atributos: - res: Variable utilizada para almacenar el
     resultado de llamar a la función index_range.
