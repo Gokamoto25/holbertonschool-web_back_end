@@ -34,7 +34,7 @@ class Server:
         if self.__indexed_dataset is None:
             dataset = self.dataset()
             truncated_dataset = dataset[:1000]
-            self.__indexedindexed__dataset = {
+            self.__indexed_dataset = {
                 i: dataset[i] for i in range(len(dataset))
             }
         return self.__indexed_dataset
@@ -42,6 +42,9 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """Retorna un diccionario con la informacion hymermedia del
         pagination para el index y pagesize especifico"""
+        if self.__indexed_dataset is None:
+            self.indexed_dataset()
+
         len_indexed_dataset = len(self.__indexed_dataset)
         assert isinstance(index, int) and 0 <= index < len_indexed_dataset
         assert isinstance(page_size, int) and page_size > 0
