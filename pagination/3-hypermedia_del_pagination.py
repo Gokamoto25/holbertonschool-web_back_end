@@ -39,7 +39,7 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10)
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
     """Retorna un diccionario con la informacion hymermedia del
     pagination para el index y pagesize especifico """
     len_indexed_dataset = len(self.__indexed_dataset)
