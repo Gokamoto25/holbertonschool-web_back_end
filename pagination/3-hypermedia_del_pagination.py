@@ -43,7 +43,7 @@ class Server:
         """Retorna un diccionario con la informacion hymermedia del
         pagination para el index y pagesize especifico"""
         len_indexed_dataset = len(self.__indexed_dataset)
-        assert isinstance(index, int) and 0 <- index < len_indexed_dataset
+        assert isinstance(index, int) and 0 <= index < len_indexed_dataset
         assert isinstance(page_size, int) and page_size > 0
 
         next_index = index + page_size
