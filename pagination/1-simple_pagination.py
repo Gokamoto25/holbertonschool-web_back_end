@@ -16,7 +16,7 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """dataset extraidos
+        """Cached dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -26,10 +26,10 @@ class Server:
 
         return self.__dataset
 
-    def index_range(self. page: int, page_size: int) -> Tuple[int, int]:
+    def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
         """
-        Retorna una tupla para los valores(start_index, end_index)
-        dados de page y page size
+        Returns a tuple (start_index, end_index)
+        for a given page and page size
         """
         start_index = (page - 1) * page_size
         end_index = start_index + page_size
@@ -38,13 +38,13 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        Retorna la pagina especificada del dataset
-        basado en el page y pagesize dado
+        Return the specified page of the dataset
+        based on the given page and page size
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
-        star_index, end_index = self.index_range(page, page_size)
+        start_index, end_index = self.index_range(page, page_size)
         dataset = self.dataset()
 
         if start_index >= len(dataset):
